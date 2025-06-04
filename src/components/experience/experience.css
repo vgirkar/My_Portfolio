@@ -184,6 +184,9 @@ h3 {
   .timeline__item:last-child {
     margin-bottom: 0;
   }
+  .section__title {
+    margin-top: 2rem; /* adjust the value as needed */
+  }
   .timeline__item::before {
     content: "";
     width: 1px;
