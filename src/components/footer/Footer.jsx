@@ -11,7 +11,7 @@ const Footer = () => {
       <a href='/' className='footer__logo'>VINIT</a>
 
       <ul className='permalinks'>
-        <li><a href='#'>Home</a></li>
+        <li><a href='/'>Home</a></li>
         <li><a href='#about'>About</a></li>
         <li><a href='#experience'>Experience</a></li>
         <li><a href='#services'>Education</a></li>
