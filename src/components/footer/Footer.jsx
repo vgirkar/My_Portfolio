@@ -8,7 +8,7 @@ import {FaGithub} from 'react-icons/fa'
 const Footer = () => {
   return (
     <footer>
-      <a href='#' className='footer__logo'>VINIT</a>
+      <a href='/' className='footer__logo'>VINIT</a>
 
       <ul className='permalinks'>
         <li><a href='#'>Home</a></li>
@@ -20,10 +20,10 @@ const Footer = () => {
       </ul>
 
       <div className="footer__socials">
-        <a href='https://www.linkedin.com/in/vgirkar/' target='_blank'><FaLinkedinIn/></a>
-        <a href='https://github.com/vgirkar' target='_blank'><FiInstagram/></a>
-        <a href='https://www.instagram.com/vinitgirkar01/' target='_blank'><IoLogoTwitter/></a>
-        <a href='https://twitter.com/vgirkar18' target='_blank'><FaGithub/></a>
+        <a href='https://www.linkedin.com/in/vgirkar/' target='_blank' rel='noreferrer'><FaLinkedinIn/></a>
+        <a href='https://github.com/vgirkar' target='_blank' rel='noreferrer'><FiInstagram/></a>
+        <a href='https://www.instagram.com/vinitgirkar01/' target='_blank' rel='noreferrer'><IoLogoTwitter/></a>
+        <a href='https://twitter.com/vgirkar18' target='_blank' rel='noreferrer'><FaGithub/></a>
       </div>
 
       <div className="footer__copyright">

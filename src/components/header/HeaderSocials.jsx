@@ -1,7 +1,6 @@
 import React from 'react'
 import {BsLinkedin} from 'react-icons/bs'
 import {BsGithub} from 'react-icons/bs'
-import {SiLeetcode} from 'react-icons/si' 
 import {FiInstagram} from 'react-icons/fi'
 import {IoLogoTwitter} from 'react-icons/io'
 import './header.css'
