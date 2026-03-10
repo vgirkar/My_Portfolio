@@ -71,6 +71,20 @@ const Experience = () => {
           <div className='timeline'>
             <div className='timeline__item'>
               <div className='circle__dot'></div>
+              <h3 className='timeline__title'>AI Engineer</h3>
+              <p className='timeline__text'>Optivaize</p>
+              <span className='timeline__date'>
+                Dec 2025 – Present
+              </span>
+              <ul>
+                <li>Designed and implemented agentic AI workflows using LLM-based agents capable of autonomous task planning, tool usage, and multi-step reasoning to automate complex business processes.</li>
+                <li>Built and optimized multi-agent orchestration systems integrating APIs, knowledge retrieval, and external tools to enable context-aware decision making and scalable AI automation.</li>
+                <li>Developed production-ready AI agents with guardrails, evaluation frameworks, and monitoring to ensure reliability, safety, and continuous performance improvement.</li>
+              </ul>
+            </div>
+
+            <div className='timeline__item'>
+              <div className='circle__dot'></div>
               <h3 className='timeline__title'>Software Development Engineer</h3>
               <p className='timeline__text'>Amazon, United States</p>
               <span className='timeline__date'>
