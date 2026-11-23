@@ -1,0 +1,207 @@
+.projects__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.projects__all {
+  flex-shrink: 0;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.project--featured {
+  grid-column: span 2;
+}
+.project {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.project__cover {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elev);
+}
+.project__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.8s var(--ease);
+}
+.project:hover .project__cover img {
+  transform: scale(1.04);
+}
+.project__art {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(120% 110% at 0% 0%, hsl(var(--hue) 85% 62% / 0.38), transparent 58%),
+    radial-gradient(110% 100% at 100% 100%, hsl(calc(var(--hue) + 50) 85% 62% / 0.28), transparent 60%),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: auto, auto, 28px 28px, 28px 28px;
+}
+.project__art-tile {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 26px;
+  background: color-mix(in srgb, var(--bg-elev) 70%, transparent);
+  border: 1px solid var(--border-strong);
+  backdrop-filter: blur(8px);
+  color: hsl(var(--hue) 90% 72%);
+  box-shadow: 0 20px 50px -20px hsl(var(--hue) 90% 60% / 0.6);
+  transition: transform 0.6s var(--ease);
+}
+[data-theme='light'] .project__art-tile {
+  color: hsl(var(--hue) 70% 36%);
+}
+.project:hover .project__art-tile {
+  transform: translateY(-6px) rotate(-6deg) scale(1.06);
+}
+.project__index {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 0.8rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--text-3);
+}
+.project__body {
+  padding: 1.35rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 1;
+}
+.project__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.project__tagline {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.project__top h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+.project__links {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+.project__links a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  transition: background 0.3s, color 0.3s, transform 0.3s var(--ease), border-color 0.3s;
+}
+.project__links a:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+.project__desc {
+  color: var(--text-2);
+  font-size: 0.95rem;
+  text-wrap: pretty;
+}
+.project__tech {
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+.project--wide {
+  grid-column: span 3;
+}
+.project--row {
+  flex-direction: row;
+  align-items: stretch;
+}
+.project--row .project__cover {
+  aspect-ratio: auto;
+  width: 220px;
+  flex-shrink: 0;
+  border-bottom: 0;
+  border-right: 1px solid var(--border);
+}
+.project--row .project__art-tile {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+}
+.project--row .project__body {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+.project--row .project__top {
+  flex: 1 1 260px;
+}
+.project--row .project__desc {
+  flex: 1 1 260px;
+}
+.project--row .project__tech {
+  margin-top: 0;
+  padding-top: 0;
+  flex: 1 1 100%;
+}
+@media (max-width: 960px) {
+  .project--wide {
+    grid-column: span 2;
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project--featured {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 600px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  .project--featured,
+  .project--wide {
+    grid-column: span 1;
+  }
+  .project--row {
+    flex-direction: column;
+  }
+  .project--row .project__cover {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .project--row .project__body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
