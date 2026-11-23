@@ -67,11 +67,12 @@ async function callGroq(messages, apiKey) {
   throw Object.assign(new Error('groq_failed'), lastError)
 }
 
-async function callGemini(messages, apiKey) {
+async function callGemini(messages, apiKey, baseUrl) {
   const model = process.env.GEMINI_MODEL || 'gemini-flash-lite-latest'
-  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+  const base = (baseUrl || 'https://generativelanguage.googleapis.com').replace(/\/$/, '')
+  const res = await fetch(`${base}/v1beta/models/${model}:generateContent`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
     body: JSON.stringify({
       systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
       contents: messages.map((m) => ({ role: m.role === 'assistant' ? 'model' : 'user', parts: [{ text: m.content }] })),
@@ -100,12 +101,21 @@ export default async (req, context) => {
   const messages = sanitize(body?.messages)
   if (!messages.length || messages[messages.length - 1].role !== 'user') return json({ error: 'no_user_message' }, 400)
 
+  // Provider selection, cheapest first:
+  // 1. GROQ_API_KEY (Groq free tier, no card) set by the site owner.
+  // 2. GEMINI_API_KEY. Netlify's AI Gateway auto-injects one together with
+  //    GOOGLE_GEMINI_BASE_URL and bills it against Netlify credits, so that
+  //    path is only used when USE_NETLIFY_AI_GATEWAY=1 is set explicitly.
+  // 3. Otherwise 503 and the widget falls back to its built-in answers.
   const groqKey = process.env.GROQ_API_KEY
   const geminiKey = process.env.GEMINI_API_KEY
-  if (!groqKey && !geminiKey) return json({ error: 'no_provider' }, 503)
+  const gatewayUrl = process.env.GOOGLE_GEMINI_BASE_URL
+  const useGateway = process.env.USE_NETLIFY_AI_GATEWAY === '1'
+  const geminiAllowed = Boolean(geminiKey) && (useGateway || !gatewayUrl)
+  if (!groqKey && !geminiAllowed) return json({ error: 'no_provider' }, 503)
 
   try {
-    const result = groqKey ? await callGroq(messages, groqKey) : await callGemini(messages, geminiKey)
+    const result = groqKey ? await callGroq(messages, groqKey) : await callGemini(messages, geminiKey, useGateway ? gatewayUrl : undefined)
     return json(result)
   } catch (err) {
     console.error('chat function error', err.message, err.status, err.body)
