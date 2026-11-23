@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9fdc4f2b.css",
+    "main.js": "/static/js/main.103e03d4.js",
+    "static/media/post-sphere.png": "/static/media/post-sphere.dd5e2fa79bf95f06c03d.png",
+    "static/media/automated-essay.png": "/static/media/automated-essay.510e6e76f96c382e2d1a.png",
+    "static/media/route-spotter.png": "/static/media/route-spotter.0b99b63a24b4cfba64df.png",
+    "static/media/port.PNG": "/static/media/port.c6137b1eb6d4890083d6.PNG",
+    "static/media/LeetCode.png": "/static/media/LeetCode.d500bb7c08811162a15d.png",
+    "static/media/my_pic.png": "/static/media/my_pic.14fba2cbd5cac1d47fed.png",
+    "static/media/IPL-score--prediction.png": "/static/media/IPL-score--prediction.511b9130fd1309816afb.png",
+    "index.html": "/index.html",
+    "main.9fdc4f2b.css.map": "/static/css/main.9fdc4f2b.css.map",
+    "main.103e03d4.js.map": "/static/js/main.103e03d4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9fdc4f2b.css",
+    "static/js/main.103e03d4.js"
+  ]
+}
