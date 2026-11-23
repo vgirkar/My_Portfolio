@@ -16,7 +16,7 @@ Never invent employers, dates, numbers or skills that are not in the profile. Po
 Do not use em dashes.
 
 PROFILE:
-${buildKnowledge()}`
+${buildKnowledge(process.env.URL || 'https://vgirkar.netlify.app')}`
 
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), { status, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } })

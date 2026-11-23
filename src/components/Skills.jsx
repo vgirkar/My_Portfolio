@@ -4,9 +4,9 @@ import Card from './ui/Card'
 import { Reveal, Stagger, Item } from './ui/motion'
 import './skills.css'
 
-const all = skillGroups.flatMap((g) => g.items)
-const rowA = all
-const rowB = [...all].reverse()
+const half = Math.ceil(skillGroups.length / 2)
+const rowA = skillGroups.slice(0, half).flatMap((g) => g.items)
+const rowB = skillGroups.slice(half).flatMap((g) => g.items)
 
 function Marquee({ items, reverse }) {
   const doubled = [...items, ...items]
@@ -35,7 +35,7 @@ export default function Skills() {
               The <em>toolkit</em> I reach for.
             </>
           }
-          lede="Languages, frameworks and platforms I have shipped with, from Kotlin and TypeScript front ends to Go, Python and Rust services on AWS and Azure."
+          lede="From LLM, RAG and agentic pipelines to Python, Go and TypeScript services on AWS, Azure and GCP: the languages, frameworks and platforms I have shipped with."
         />
       </div>
 

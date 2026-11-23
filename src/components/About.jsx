@@ -45,18 +45,19 @@ export default function About() {
                 Hi, I&apos;m <strong>{profile.fullName}</strong>.
               </h3>
               <p>
-                I&apos;m a Software Development Engineer with a Master&apos;s in Computer Science from the University of North Carolina at Charlotte. I have a
-                proven track record at Amazon and Suven Consultants, delivering scalable, high-performance backend and frontend systems, and I now build
-                agentic AI products at Optivaize.
+                I&apos;m a Software / AI Engineer with a Master&apos;s in Computer Science from the University of North Carolina at Charlotte and a track
+                record of building scalable, production-grade distributed systems across backend and full stack. After Amazon and CoverFox, I now lead the
+                design and deployment of AI-powered, microservices-based systems at Optivaize: LLM and RAG pipelines, agentic workflows, Dockerized services
+                and CI/CD.
               </p>
               <p>
-                I work across the stack with React, TypeScript, Go, Rust and Python on AWS and Azure. I thrive in fast-paced teams, turning UX designs into
-                reliable, reusable modules, and I care about operational excellence, test-driven development and strategic planning.
+                I&apos;m strong in Python, Go and cloud-native architecture, and I take end-to-end ownership from system design to production, with
+                test-driven development, observability and security built in from the start.
               </p>
               <ul className="chips bento__principles">
-                <li className="chip chip--accent">Operational excellence</li>
+                <li className="chip chip--accent">End-to-end ownership</li>
                 <li className="chip chip--accent">Test-driven</li>
-                <li className="chip chip--accent">Cross-team collaboration</li>
+                <li className="chip chip--accent">Cloud-native</li>
               </ul>
             </Card>
           </Item>
@@ -84,7 +85,7 @@ export default function About() {
               <h3 className="bento__subhead">
                 {profile.currently.title} at {profile.currently.company}
               </h3>
-              <p className="muted">Designing multi-agent orchestration with guardrails, evaluation frameworks and monitoring in production.</p>
+              <p className="muted">Leading LLM, RAG and multi-agent systems into production: FastAPI microservices, Docker, CI/CD, evaluation and observability.</p>
             </Card>
           </Item>
 
@@ -106,7 +107,7 @@ export default function About() {
           <Item className="bento__connect">
             <Card className="card__pad bento__card bento__card--accent">
               <span className="bento__label">
-                <Wifi size={14} /> Remote or on-site
+                <Wifi size={14} /> {profile.location} · Remote or on-site
               </span>
               <h3 className="bento__subhead">Let&apos;s build something together.</h3>
               <a href={`mailto:${profile.email}`} className="bento__mail">

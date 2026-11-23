@@ -21,7 +21,7 @@ export default function Footer() {
               <span className="nav__mark">V</span>
               {profile.name}
             </a>
-            <p className="muted">{profile.role}. Building AI agents and the systems that run them.</p>
+            <p className="muted">{profile.role} based in {profile.location}. Building AI agents and the systems that run them.</p>
           </div>
 
           <ul className="footer__links">

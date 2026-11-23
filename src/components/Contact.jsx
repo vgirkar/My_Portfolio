@@ -11,7 +11,7 @@ import './contact.css'
 
 const channels = [
   { label: 'Email', value: profile.email, href: `mailto:${profile.email}`, cta: 'Send a message', Icon: Mail },
-  { label: 'WhatsApp', value: profile.phoneDisplay, href: profile.whatsapp, cta: 'Message me', Icon: FaWhatsapp },
+  { label: 'Phone / WhatsApp', value: profile.phoneDisplay, href: profile.whatsapp, cta: 'Message me', Icon: FaWhatsapp },
   { label: 'LinkedIn', value: profile.linkedinHandle, href: profile.socials.linkedin, cta: 'Connect', Icon: FaLinkedinIn },
 ]
 

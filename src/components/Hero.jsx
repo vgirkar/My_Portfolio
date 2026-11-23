@@ -79,15 +79,16 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p className="hero__lede" {...rise(0.75)}>
-            Software engineer with a Master&apos;s in Computer Science from UNC Charlotte. I shipped developer tooling and rendering infrastructure at
-            Amazon, and now design production LLM agents at Optivaize. React, TypeScript, Go, Python and AWS are my daily tools.
+            Software and AI engineer with a Master&apos;s in Computer Science from UNC Charlotte. I shipped UI framework and rendering infrastructure
+            at Amazon, and now lead the design and production deployment of LLM, RAG and agentic systems at Optivaize. Python, Go, TypeScript and
+            cloud-native architecture are my daily tools.
           </motion.p>
 
           <motion.div className="hero__actions" {...rise(0.9)}>
             <a href="#projects" className="btn btn--primary">
               See my work <ArrowDown size={16} className="btn__icon btn__icon--down" />
             </a>
-            <a href={profile.cv} className="btn" target="_blank" rel="noreferrer">
+            <a href={profile.cv} className="btn" download="Vinit-Girkar-Resume.pdf">
               Download CV <ArrowUpRight size={16} className="btn__icon" />
             </a>
           </motion.div>
@@ -115,7 +116,7 @@ export default function Hero() {
             <img src={portrait} alt="Portrait of Vinit Girkar" width="800" height="800" fetchPriority="high" />
             <div className="hero__card-foot">
               <span className="hero__card-name">{profile.fullName}</span>
-              <span className="hero__card-role mono">AI Engineer · ex-Amazon SDE</span>
+              <span className="hero__card-role mono">AI / Software Engineer · ex-Amazon SDE</span>
             </div>
           </div>
 
@@ -126,7 +127,7 @@ export default function Hero() {
             <GraduationCap size={14} /> MS CS · UNC Charlotte
           </motion.div>
           <motion.div className="hero__badge hero__badge--3" animate={reduce ? {} : { y: [0, -7, 0] }} transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut', delay: 1.1 }}>
-            <Bot size={14} /> Building LLM agents
+            <Bot size={14} /> LLMs, RAG & agents
           </motion.div>
         </motion.div>
       </div>

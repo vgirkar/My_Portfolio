@@ -74,7 +74,7 @@ export default function Nav() {
               </motion.span>
             </AnimatePresence>
           </button>
-          <a className="btn btn--primary btn--sm nav__cta" href={profile.cv} target="_blank" rel="noreferrer">
+          <a className="btn btn--primary btn--sm nav__cta" href={profile.cv} target="_blank" rel="noreferrer" type="application/pdf">
             Resume <ArrowUpRight size={15} className="btn__icon" />
           </a>
           <button className="nav__icon nav__burger" onClick={() => setOpen((o) => !o)} aria-label="Toggle menu" aria-expanded={open}>

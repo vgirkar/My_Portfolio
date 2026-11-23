@@ -6,7 +6,8 @@ const norm = (s) => s.toLowerCase().replace(/[^a-z0-9+#. ]/g, ' ')
 function experienceAt(company) {
   const job = experience.find((j) => j.company.toLowerCase().includes(company))
   if (!job) return null
-  return `Vinit was ${job.role} at ${job.company} (${job.period}). ${job.bullets.slice(0, 2).join(' ')}`
+  const verb = /present/i.test(job.period) ? 'is' : 'was'
+  return `Vinit ${verb} ${job.role} at ${job.company} (${job.period}). ${job.bullets.slice(0, 2).join(' ')}`
 }
 
 const intents = [
@@ -16,15 +17,15 @@ const intents = [
     answer: () => `Hi! I'm Vinit's assistant. Ask me about his experience, skills, projects, education or how to get in touch.`,
   },
   { keys: ['amazon', 'kata', 'sde'], answer: () => experienceAt('amazon') },
-  { keys: ['optivaize', 'current', 'currently', 'now', 'today', 'ai engineer', 'agents', 'llm'], answer: () => experienceAt('optivaize') },
+  { keys: ['optivaize', 'current', 'currently', 'now', 'today', 'ai engineer', 'agents', 'agentic', 'llm', 'rag', 'retrieval', 'langchain', 'langgraph', 'microservice'], answer: () => experienceAt('optivaize') },
+  { keys: ['coverfox', 'cover fox', 'loan', 'fintech', 'django', 'amortization'], answer: () => experienceAt('coverfox') },
   { keys: ['suven', 'intern', 'internship'], answer: () => experienceAt('suven') },
-  { keys: ['teaching', 'assistant', 'ta ', 'unc charlotte', 'uncc'], answer: () => experienceAt('unc') },
   {
     keys: ['experience', 'worked', 'work history', 'career', 'jobs', 'roles', 'companies', 'employer', 'resume', 'cv', 'background'],
     answer: () =>
-      `Vinit has ${stats[0].value}+ years of experience: ` +
+      `Vinit has ${stats[0].value}${stats[0].suffix} years of experience: ` +
       experience.map((j) => `${j.role} at ${j.company} (${j.period})`).join('; ') +
-      `. His full CV is at ${profile.cv}`,
+      `. His full CV is at ${window.location.origin}${profile.cv}`,
   },
   {
     keys: ['skill', 'skills', 'stack', 'technolog', 'languages', 'language', 'framework', 'tools', 'know', 'proficient', 'react', 'python', 'typescript', 'go ', 'golang', 'rust', 'java', 'kotlin', 'aws', 'azure', 'cloud', 'database', 'postgres', 'mongo', 'node', 'next', 'tailwind', 'fastapi', 'django', 'spring', 'graphql'],
@@ -46,11 +47,11 @@ const intents = [
   },
   {
     keys: ['contact', 'email', 'mail', 'reach', 'hire', 'hiring', 'phone', 'whatsapp', 'call', 'linkedin', 'connect', 'message', 'talk', 'touch'],
-    answer: () => `You can email Vinit at ${profile.email}, message him on WhatsApp at ${profile.phoneDisplay}, or connect on LinkedIn: ${profile.socials.linkedin}`,
+    answer: () => `You can email Vinit at ${profile.email}, call or WhatsApp him at ${profile.phoneDisplay}, or connect on LinkedIn: ${profile.socials.linkedin}`,
   },
   {
-    keys: ['remote', 'relocate', 'relocation', 'on-site', 'onsite', 'location', 'based', 'where', 'live', 'country', 'city'],
-    answer: () => `Vinit is open to remote or on-site work. He studied and worked in the United States (UNC Charlotte, Amazon) and started his career in India. For specifics, email him at ${profile.email}`,
+    keys: ['remote', 'relocate', 'relocation', 'on-site', 'onsite', 'location', 'based', 'where', 'live', 'country', 'city', 'mumbai', 'india'],
+    answer: () => `Vinit is based in ${profile.location} and is open to remote or on-site work. He studied and worked in the United States (UNC Charlotte, Amazon) and currently works remotely for Optivaize. For specifics, email him at ${profile.email}`,
   },
   {
     keys: ['leetcode', 'algorithm', 'dsa', 'competitive', 'coding practice'],

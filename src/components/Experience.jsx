@@ -23,7 +23,7 @@ export default function Experience() {
                 Where I&apos;ve <em>worked</em>.
               </>
             }
-            lede="Four roles across applied AI, big tech, academia and fintech. Each one taught me something different about building software people rely on."
+            lede="From an internship in Mumbai to Amazon and now leading production AI systems at Optivaize. Each role taught me something different about building software people rely on."
           />
         </div>
 
