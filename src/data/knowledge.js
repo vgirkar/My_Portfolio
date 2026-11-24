@@ -1,9 +1,12 @@
 import { profile, stats, toolbox, skillGroups, experience, projects, education } from './content.js'
 
 export const ABOUT_TEXT =
-  "Vinit Vilas Girkar is a Software / AI Engineer based in Mumbai, India, with a Master's in Computer Science from the University of North Carolina at Charlotte and a track record of building scalable, production-grade distributed systems across backend and full stack. " +
-  'He previously worked at Amazon (Shopping Foundation) and CoverFox, and currently leads the design and production deployment of AI-powered, microservices-based systems at Optivaize: LLM and retrieval-augmented generation (RAG) pipelines, agentic workflows, Dockerized services and CI/CD. ' +
-  'He is strong in Python, Go and cloud-native architecture, takes end-to-end ownership from system design to production, and is open to remote or on-site work.'
+  'Vinit Vilas Girkar is an AI and backend software engineer based in Mumbai, India, with 4 years of experience at Amazon, Optivaize and Coverfox and a Master of Science in Computer Science from the University of North Carolina at Charlotte. ' +
+  'He builds production LLM systems: retrieval-augmented generation (RAG) pipelines, multi-agent workflows in LangGraph, and Python/FastAPI microservices shipped with Docker and CI/CD. ' +
+  'At Optivaize he leads the design and production deployment of LLM systems for customer-facing products, including a customer-service voice and chat AI agent across phone, WhatsApp and website chat. ' +
+  'He takes end-to-end ownership from system design to production and is open to remote or on-site work.'
+
+export const jobTitle = (job) => (job.company ? `${job.role} at ${job.company}` : job.role)
 
 export function buildKnowledge(baseUrl = '') {
   const lines = []
@@ -20,7 +23,7 @@ export function buildKnowledge(baseUrl = '') {
   lines.push('')
   lines.push('## Work experience (most recent first)')
   experience.forEach((job) => {
-    lines.push(`### ${job.role} at ${job.company} (${job.location}), ${job.period}`)
+    lines.push(`### ${jobTitle(job)} (${job.location}), ${job.period}`)
     job.bullets.forEach((b) => lines.push(`- ${b}`))
   })
   lines.push('')

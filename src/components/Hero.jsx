@@ -79,9 +79,9 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p className="hero__lede" {...rise(0.75)}>
-            Software and AI engineer with a Master&apos;s in Computer Science from UNC Charlotte. I shipped UI framework and rendering infrastructure
-            at Amazon, and now lead the design and production deployment of LLM, RAG and agentic systems at Optivaize. Python, Go, TypeScript and
-            cloud-native architecture are my daily tools.
+            AI and backend software engineer with a Master&apos;s in Computer Science from UNC Charlotte. I shipped UI framework and rendering
+            infrastructure at Amazon, and now lead production LLM systems at Optivaize: RAG pipelines, voice and chat agents, multi-agent workflows in
+            LangGraph, and Python/FastAPI microservices shipped with Docker and CI/CD.
           </motion.p>
 
           <motion.div className="hero__actions" {...rise(0.9)}>
@@ -116,7 +116,7 @@ export default function Hero() {
             <img src={portrait} alt="Portrait of Vinit Girkar" width="800" height="800" fetchPriority="high" />
             <div className="hero__card-foot">
               <span className="hero__card-name">{profile.fullName}</span>
-              <span className="hero__card-role mono">AI / Software Engineer · ex-Amazon SDE</span>
+              <span className="hero__card-role mono">AI & Backend Engineer · ex-Amazon SDE</span>
             </div>
           </div>
 

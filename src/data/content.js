@@ -2,7 +2,7 @@
 export const profile = {
   name: 'Vinit Girkar',
   fullName: 'Vinit Vilas Girkar',
-  role: 'AI / Software Engineer',
+  role: 'AI & Backend Software Engineer',
   currently: { title: 'AI / Software Engineer', company: 'Optivaize' },
   location: 'Mumbai, India',
   email: 'vgirkar20@gmail.com',
@@ -33,35 +33,75 @@ export const stats = [
   { value: 2, suffix: '', label: 'Degrees in CS & IT' },
 ]
 
-export const toolbox = ['Python', 'Go', 'TypeScript', 'React', 'FastAPI', 'LangGraph', 'Docker', 'AWS', 'PostgreSQL']
+export const toolbox = ['Python', 'TypeScript', 'Go', 'FastAPI', 'LangGraph', 'React', 'Next.js', 'Docker', 'AWS', 'PostgreSQL']
 
 export const skillGroups = [
   {
     name: 'AI / ML',
-    items: ['LLMs', 'RAG', 'Agentic workflows', 'LangChain', 'LangGraph', 'Embeddings', 'pgvector', 'Pinecone', 'Hybrid retrieval & reranking', 'Ragas', 'LLM-as-judge', 'Prompt-injection defense', 'PII handling'],
+    items: [
+      'LLMs',
+      'RAG',
+      'Conversational & voice AI agents',
+      'Multi-agent workflows',
+      'LangChain',
+      'LangGraph',
+      'Embeddings',
+      'Vector search',
+      'pgvector',
+      'Pinecone',
+      'Hybrid retrieval',
+      'Reranking',
+      'LLM evaluation (Ragas, LLM-as-judge)',
+      'Prompt engineering',
+      'Prompt-injection defense',
+    ],
   },
-  { name: 'Languages', items: ['Python', 'Go', 'Rust', 'C++', 'C#', 'Java', 'JavaScript', 'TypeScript', 'SQL'] },
-  { name: 'Backend & APIs', items: ['FastAPI', 'REST', 'GraphQL', 'Spring Boot', 'Express.js', 'Node.js', '.NET', 'Microservices'] },
-  { name: 'Frontend', items: ['React', 'Next.js', 'Angular', 'TypeScript', 'ES6', 'HTML', 'CSS'] },
-  { name: 'Cloud & DevOps', items: ['AWS', 'Azure', 'GCP', 'Docker', 'CI/CD', 'Observability', 'Test-Driven Development', 'Agile'] },
+  { name: 'Languages', items: ['Python', 'TypeScript', 'JavaScript', 'Go', 'Java', 'C++', 'SQL'] },
+  { name: 'Backend', items: ['FastAPI', 'Django', 'Node.js', 'Express.js', 'Spring Boot', 'REST APIs', 'GraphQL', 'Microservices', 'Asynchronous processing'] },
+  { name: 'Frontend', items: ['React', 'Next.js', 'HTML', 'CSS'] },
+  { name: 'Cloud & DevOps', items: ['AWS', 'Azure', 'GCP', 'Docker', 'CI/CD', 'Git', 'LLM observability', 'Test-driven development', 'Agile'] },
   { name: 'Databases', items: ['PostgreSQL', 'MySQL', 'MongoDB'] },
 ]
 
+// Entries with `note: true` render as a compact timeline note instead of a full card.
 export const experience = [
   {
     role: 'AI / Software Engineer',
     company: 'Optivaize',
-    location: 'Remote',
+    location: 'Netherlands (Remote)',
     period: 'Jan 2026 - Present',
     icon: 'Bot',
-    tags: ['LLMs & RAG', 'LangGraph agents', 'FastAPI microservices', 'CI/CD'],
+    tags: ['LLMs & RAG', 'Voice & chat agents', 'LangGraph', 'FastAPI microservices', 'Docker & CI/CD'],
     bullets: [
-      'Lead the design and production deployment of AI systems combining LLMs, RAG pipelines and agentic workflows, turning experimental capabilities into reliable services integrated into customer-facing products.',
-      'Architected RAG pipelines end to end: ingestion, chunking, embedding, vector indexing (pgvector / Pinecone), hybrid retrieval and reranking, with measurable gains in answer faithfulness and retrieval precision.',
-      'Built multi-agent workflows (LangChain / LangGraph) with tool use, memory and human-in-the-loop controls, integrated with enterprise systems via FastAPI microservices.',
-      'Own the production path: Dockerized services, CI/CD pipelines, LLM observability (token usage, latency, cost per query) and evaluation frameworks (Ragas, LLM-as-judge), plus security and compliance practices for PII handling, prompt-injection defense and access control.',
-      'Re-architected a real-time platform on a microservices backend (API Gateway, User, Transaction, Session, Game Orchestration), improving scalability, service isolation and deployment reliability.',
+      'Led design and production deployment of LLM systems (RAG and agentic workflows) for customer-facing products.',
+      'Built a customer-service voice and chat AI agent across four channels (inbound and outbound phone, WhatsApp, website chat) and guided an intern in turning it into a multi-tenant product.',
+      'Built a pipeline that ingests sales leads by API polling and WhatsApp webhook, with rule-based de-duplication of repeat enquiries.',
+      "Built a design tool's full web application, including an in-browser SVG editor and vector export.",
+      'Built RAG pipelines end to end in Python: ingestion, chunking, embedding, vector indexing on pgvector and Pinecone, hybrid retrieval and reranking, improving answer faithfulness and retrieval precision as measured with Ragas.',
+      'Developed multi-agent workflows in LangChain and LangGraph with tool use, memory and human-in-the-loop approval, exposed to enterprise systems through FastAPI microservices.',
+      'Shipped with Docker and CI/CD; added LLM observability (token usage, latency, cost per query), Ragas and LLM-as-judge evaluation, PII handling, prompt-injection defense and access control.',
     ],
+  },
+  {
+    role: 'Freelance Software Engineer',
+    company: 'SkillPvP Games',
+    location: 'India (Remote)',
+    period: 'Jul 2025 - Dec 2025',
+    icon: 'Gamepad2',
+    tags: ['Microservices', 'Real-time platform', 'Backend architecture'],
+    bullets: [
+      'Re-architected a real-time gaming platform into five backend microservices (API Gateway, User, Transaction, Session, Game Orchestration), improving scalability, service isolation and deployment reliability.',
+    ],
+  },
+  {
+    role: 'Career break',
+    company: '',
+    location: 'USA',
+    period: 'Sep 2024 - Jun 2025',
+    icon: 'Pause',
+    note: true,
+    tags: [],
+    bullets: ['Recovery from an accident after a layoff; relocated to India in June 2025.'],
   },
   {
     role: 'Software Development Engineer',
@@ -71,29 +111,29 @@ export const experience = [
     icon: 'Building2',
     tags: ['Kata UI framework', 'TypeScript', 'Next.js'],
     bullets: [
-      "Added new language features to Kata, Amazon's UI framework, reducing development time for complex UI components by 30%.",
-      'Upgraded the TypeScript-based Kata compiler API to integrate with Next.js, enabling consistent builds across TypeScript versions and cutting frontend integration issues by 40%.',
-      'Designed an error-recovery framework for the JS / Next.js rendering pipeline, improving fault tolerance and reducing runtime rendering errors by 90%.',
+      "Cut development time for complex UI components 30% by adding language features to Kata, Amazon's UI framework.",
+      'Cut frontend integration issues by 40% by upgrading the TypeScript-based Kata compiler API to integrate with Next.js, giving consistent builds across TypeScript versions.',
+      'Reduced runtime rendering errors by 90% by designing an error-recovery framework for the JavaScript and Next.js rendering pipeline.',
     ],
   },
   {
     role: 'Software Engineer',
-    company: 'CoverFox',
+    company: 'Coverfox',
     location: 'India',
     period: 'Aug 2019 - Sep 2020',
     icon: 'Briefcase',
     tags: ['Python', 'Django', 'Fintech'],
     bullets: [
-      'Built and integrated custom amortization algorithms in Python, improving loan-assessment accuracy and reducing calculation error rates by 20%.',
-      'Implemented auto-generated Credit Approval Memorandum (CAM) reports with Django backend services, cutting credit-approval turnaround time by 80%.',
-      'Scaled Django backend systems for large financial datasets via optimized queries and asynchronous workflows.',
+      'Reduced loan calculation error rates by 20% by building custom amortization algorithms in Python for loan assessment.',
+      'Cut credit-approval turnaround time by 80% by automating Credit Approval Memorandum (CAM) report generation with Django backend services.',
+      'Scaled Django backends for large financial datasets through SQL query optimization and asynchronous workflows.',
     ],
   },
   {
     role: 'Software Engineer Intern',
     company: 'Suven Consultants',
     location: 'India',
-    period: 'Aug 2019 - Dec 2019',
+    period: 'Sep 2017 - Dec 2017',
     icon: 'School',
     tags: ['Backend', 'Automation'],
     bullets: [
@@ -107,8 +147,8 @@ export const experience = [
 export const projects = [
   {
     title: 'Automated Essay Evaluation',
-    tagline: 'ML / NLP',
-    description: 'ML pipeline that scores free-text essays: feature engineering and model training in Python with transformer and NLTK models, served through a Flask app on PostgreSQL.',
+    tagline: 'Python · ML · NLP',
+    description: 'Scores free-text essays with machine learning and NLP: feature engineering and model training in Python with transformer and NLTK models, served through a Flask app on PostgreSQL.',
     tech: ['Python', 'scikit-learn', 'NLTK', 'Transformers', 'TensorFlow', 'Flask', 'PostgreSQL'],
     github: 'https://github.com/vgirkar/Essay_Grading',
     image: 'essayscore',

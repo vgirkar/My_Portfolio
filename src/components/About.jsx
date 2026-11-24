@@ -45,14 +45,13 @@ export default function About() {
                 Hi, I&apos;m <strong>{profile.fullName}</strong>.
               </h3>
               <p>
-                I&apos;m a Software / AI Engineer with a Master&apos;s in Computer Science from the University of North Carolina at Charlotte and a track
-                record of building scalable, production-grade distributed systems across backend and full stack. After Amazon and CoverFox, I now lead the
-                design and deployment of AI-powered, microservices-based systems at Optivaize: LLM and RAG pipelines, agentic workflows, Dockerized services
-                and CI/CD.
+                I&apos;m an AI and backend software engineer with four years of experience at Amazon, Optivaize and Coverfox, and a Master&apos;s in
+                Computer Science from the University of North Carolina at Charlotte. I build production LLM systems: retrieval-augmented generation
+                pipelines, multi-agent workflows in LangGraph, and Python/FastAPI microservices shipped with Docker and CI/CD.
               </p>
               <p>
-                I&apos;m strong in Python, Go and cloud-native architecture, and I take end-to-end ownership from system design to production, with
-                test-driven development, observability and security built in from the start.
+                At Optivaize I built a customer-service voice and chat agent that runs across phone, WhatsApp and website chat, and I take end-to-end
+                ownership from system design to production, with evaluation, observability and security built in from the start.
               </p>
               <ul className="chips bento__principles">
                 <li className="chip chip--accent">End-to-end ownership</li>
@@ -85,7 +84,7 @@ export default function About() {
               <h3 className="bento__subhead">
                 {profile.currently.title} at {profile.currently.company}
               </h3>
-              <p className="muted">Leading LLM, RAG and multi-agent systems into production: FastAPI microservices, Docker, CI/CD, evaluation and observability.</p>
+              <p className="muted">Leading LLM, RAG and multi-agent systems into production: voice and chat agents across four channels, FastAPI microservices, Docker, CI/CD, evaluation and observability.</p>
             </Card>
           </Item>
 

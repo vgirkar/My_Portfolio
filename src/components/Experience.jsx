@@ -7,6 +7,30 @@ import Card from './ui/Card'
 import { Reveal } from './ui/motion'
 import './experience.css'
 
+function TimelineNote({ job }) {
+  const Icon = job.icon
+  return (
+    <Reveal className="timeline__item timeline__item--note" delay={0.05}>
+      <span className="timeline__dot timeline__dot--muted" aria-hidden="true" />
+      <div className="timeline__note">
+        <span className="timeline__note-icon">
+          <Icon size={16} />
+        </span>
+        <div className="timeline__note-body">
+          <p className="timeline__note-title">
+            {job.role}
+            <span className="timeline__loc">
+              <MapPin size={12} /> {job.location}
+            </span>
+          </p>
+          <p className="timeline__note-text">{job.bullets[0]}</p>
+        </div>
+        <span className="chip timeline__date">{job.period}</span>
+      </div>
+    </Reveal>
+  )
+}
+
 export default function Experience() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 75%', 'end 70%'] })
@@ -23,7 +47,7 @@ export default function Experience() {
                 Where I&apos;ve <em>worked</em>.
               </>
             }
-            lede="From an internship in Mumbai to Amazon and now leading production AI systems at Optivaize. Each role taught me something different about building software people rely on."
+            lede="From an internship in Mumbai to Amazon, freelance backend work and now leading production AI systems at Optivaize. Each role taught me something different about building software people rely on."
           />
         </div>
 
@@ -33,6 +57,7 @@ export default function Experience() {
           </div>
 
           {experience.map((job, i) => {
+            if (job.note) return <TimelineNote key={job.role + job.period} job={job} />
             const Icon = job.icon
             return (
               <Reveal key={job.role + job.company} className="timeline__item" delay={0.05}>

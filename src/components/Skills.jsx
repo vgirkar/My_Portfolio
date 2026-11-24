@@ -35,7 +35,7 @@ export default function Skills() {
               The <em>toolkit</em> I reach for.
             </>
           }
-          lede="From LLM, RAG and agentic pipelines to Python, Go and TypeScript services on AWS, Azure and GCP: the languages, frameworks and platforms I have shipped with."
+          lede="From LLM, RAG and voice or chat agents to Python, TypeScript and Go services on AWS, Azure and GCP: the languages, frameworks and platforms I have shipped with."
         />
       </div>
 

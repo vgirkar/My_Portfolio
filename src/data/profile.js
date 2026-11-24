@@ -1,8 +1,8 @@
-import { Bot, Building2, School, Briefcase, Route, Trophy, Smartphone, Sparkles, Code2, PenLine } from 'lucide-react'
+import { Bot, Building2, School, Briefcase, Gamepad2, Pause, Route, Trophy, Smartphone, Sparkles, Code2, PenLine } from 'lucide-react'
 import essayscore from '../assets/essayscore.jpg'
 import * as content from './content'
 
-const icons = { Bot, Building2, School, Briefcase, Route, Trophy, Smartphone, Sparkles, Code2, PenLine }
+const icons = { Bot, Building2, School, Briefcase, Gamepad2, Pause, Route, Trophy, Smartphone, Sparkles, Code2, PenLine }
 const images = { essayscore }
 
 export const { profile, navLinks, stats, toolbox, skillGroups, education, emailjsConfig } = content
