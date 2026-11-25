@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react'
 import { useRef } from 'react'
 import { motion, useScroll, useSpring } from 'motion/react'
 import { MapPin } from 'lucide-react'
@@ -83,6 +84,11 @@ export default function Experience() {
                       <li key={b}>{b}</li>
                     ))}
                   </ul>
+                  {job.link && (
+                    <a className="timeline__link" href={job.link.href} target="_blank" rel="noreferrer">
+                      {job.link.label} <ArrowUpRight size={14} className="btn__icon" />
+                    </a>
+                  )}
                   <ul className="chips timeline__tags">
                     {job.tags.map((t) => (
                       <li key={t} className="chip">

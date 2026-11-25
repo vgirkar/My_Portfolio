@@ -81,6 +81,7 @@ export const experience = [
       'Developed multi-agent workflows in LangChain and LangGraph with tool use, memory and human-in-the-loop approval, exposed to enterprise systems through FastAPI microservices.',
       'Shipped with Docker and CI/CD; added LLM observability (token usage, latency, cost per query), Ragas and LLM-as-judge evaluation, PII handling, prompt-injection defense and access control.',
     ],
+    link: { label: 'Harbor: open-source reference implementation of this RAG and agent stack', href: 'https://github.com/vgirkar/harbor' },
   },
   {
     role: 'Freelance Software Engineer',
