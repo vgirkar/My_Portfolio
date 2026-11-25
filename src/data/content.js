@@ -146,14 +146,14 @@ export const experience = [
 
 export const projects = [
   {
-    title: 'Automated Essay Evaluation',
-    tagline: 'Python · ML · NLP',
-    description: 'Scores free-text essays with machine learning and NLP: feature engineering and model training in Python with transformer and NLTK models, served through a Flask app on PostgreSQL.',
-    tech: ['Python', 'scikit-learn', 'NLTK', 'Transformers', 'TensorFlow', 'Flask', 'PostgreSQL'],
-    github: 'https://github.com/vgirkar/Essay_Grading',
-    image: 'essayscore',
-    icon: 'PenLine',
-    hue: 150,
+    title: 'Harbor',
+    tagline: 'LangGraph · RAG · Voice',
+    description: 'Production customer support assistant for an online store. Hybrid retrieval on pgvector and Postgres full-text search fused with RRF and reranked, a LangGraph multi-agent workflow on Claude with a groundedness verifier, order lookups through tools, push-to-talk voice, five layers of prompt-injection defence, and Ragas plus LLM-as-judge evaluation running in CI.',
+    tech: ['Python', 'LangGraph', 'LangChain', 'Claude', 'pgvector', 'Pinecone', 'FastAPI', 'Ragas', 'ElevenLabs', 'Docker'],
+    github: 'https://github.com/vgirkar/harbor',
+    image: 'harbor',
+    icon: 'Bot',
+    hue: 190,
     featured: true,
   },
   {
@@ -164,6 +164,17 @@ export const projects = [
     github: 'https://github.com/vgirkar/Route-Spotter',
     icon: 'Route',
     hue: 205,
+  },
+  {
+    title: 'Automated Essay Evaluation',
+    tagline: 'Python · ML · NLP',
+    description: 'Scores free-text essays with machine learning and NLP: feature engineering and model training in Python with transformer and NLTK models, served through a Flask app on PostgreSQL.',
+    tech: ['Python', 'scikit-learn', 'NLTK', 'Transformers', 'TensorFlow', 'Flask', 'PostgreSQL'],
+    github: 'https://github.com/vgirkar/Essay_Grading',
+    image: 'essayscore',
+    icon: 'PenLine',
+    hue: 150,
+    featured: true,
   },
   {
     title: 'IPL Prediction System',
@@ -201,7 +212,6 @@ export const projects = [
     linkLabel: 'Profile',
     icon: 'Code2',
     hue: 0,
-    wide: true,
   },
 ]
 

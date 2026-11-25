@@ -19,7 +19,7 @@ export default function Projects() {
                 Things I&apos;ve <em>built</em>.
               </>
             }
-            lede="A mix of applied machine learning, full-stack web apps and native mobile work. Source for each lives on GitHub."
+            lede="Production LLM systems, applied machine learning, full-stack web apps and native mobile work. Source for each lives on GitHub."
           />
           <a href={profile.socials.github} target="_blank" rel="noreferrer" className="btn projects__all">
             <FaGithub /> All repositories <ArrowUpRight size={16} className="btn__icon" />
